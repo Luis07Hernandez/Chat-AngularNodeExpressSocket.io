@@ -1,0 +1,34 @@
+<div class="container content">
+  <div class="col-md-8 mx-auto">
+    <div class="card">
+      <div class="card-header">Hola <span class="name-chat">{{userChat.user}}</span> escribe algo :)</div>
+      <div class="card-body height3">
+        <ul *ngFor="let a of myMessages" class="chat-list">
+          <li *ngIf="userChat.user != a.user" class="in">
+            <div class="chat-img">
+              <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+            </div>
+            <div class="chat-body">
+              <div class="chat-message">
+                <h5>{{a.user}}</h5>
+                <p>{{a.text}}</p>
+              </div>
+            </div>
+          </li>
+          <li *ngIf="userChat.user == a.user" class="out">
+            <div class="chat-img">
+              <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar6.png">
+            </div>
+            <div class="chat-body">
+              <div class="chat-message">
+                <h5>{{a.user}}</h5>
+                <p>{{a.text}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-body card"><input type="text" class="form-control" (change)="myMessage()" [(ngModel)]="userChat.text"></div>
+  </div>
+</div>

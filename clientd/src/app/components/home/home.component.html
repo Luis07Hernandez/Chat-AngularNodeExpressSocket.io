@@ -1,0 +1,14 @@
+<div class="container py-4">
+  <div class="col-md-6 mx-auto">
+    <div class="card p-5">
+      <div class="card-body text-center">
+        <div class="pic">
+          <!--<img alt="Avtar" src="{{User.pic}}">-->
+        </div>
+      </div>
+      <h4>Escribe tú nombre</h4>
+      <input type="text" class="form-control imp" [(ngModel)]="User.name">
+      <a href="" class="btn btn-primary btn-block mt-3" [routerLink]="['/chat',User.name]">Unirme al chat</a>
+    </div>
+  </div>
+</div>
